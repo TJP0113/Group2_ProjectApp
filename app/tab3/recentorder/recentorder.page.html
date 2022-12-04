@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-back-button>
+        
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title>Recent Order</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <h1>Record</h1>
+ 
+  <ion-card *ngFor="let orderdetail of order_detail" >
+    <ion-card-header>
+      <ion-card-title>{{orderdetail.date}}</ion-card-title>
+      <ion-card-subtitle>Serial: {{orderdetail.serial}}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-chip>
+      <ion-avatar>
+        <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+      </ion-avatar>
+      <ion-label>People: {{orderdetail.person_number}}</ion-label>
+      
+    </ion-chip>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let o of orderdetail.order">
+          <ion-thumbnail slot="start">
+            <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
+          </ion-thumbnail>
+          <ion-label>{{o.menu_title}} x {{o.menu_qty}}</ion-label>
+          <ion-label>{{o.menu_price}} </ion-label>
+        </ion-item>
+  
+        
+        
+      </ion-list>
+      <div>
+        <label>Total Amount :</label>{{orderdetail.total_amount}}
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

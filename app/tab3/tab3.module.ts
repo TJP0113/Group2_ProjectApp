@@ -14,7 +14,8 @@ import { Tab3PageRoutingModule } from './tab3-routing.module';
     FormsModule,
     ExploreContainerComponentModule,
     Tab3PageRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    
   ],
   declarations: [Tab3Page]
 })
