@@ -51,7 +51,7 @@ export class RegisterPage implements OnInit {
         if(data.status == "OK") {
 
           this.presentAlert("SUCCESS", "Register successfully", "Your account has been created. Please Login here");
-          this.router.navigate(["/tab3"]);
+          this.router.navigate(["/tabs/tab3"]);
         } else {
           this.presentAlert("ERROR", "", data.result);
         }
