@@ -55,43 +55,45 @@
 
     
     <div>
+      <form [formGroup]="EditmemberForm">
       <ion-card color="medium">
         <ion-card-header>
           <ion-card-title>Manage Information</ion-card-title>
           
           <ion-card-subtitle>Personal Deatil</ion-card-subtitle>
         </ion-card-header>
+       
+          <ion-card-content>
+            
+            <ion-item fill="solid" class="m-3">
+              <ion-label position="floating">Name :</ion-label>
+              <ion-input type="email" [clearInput]="true" formControlName="name" value="{{member_data.member_name}}"></ion-input>
+              
+            </ion-item>
+            <ion-item fill="solid" class="m-3">
+              <ion-label position="floating">Email :</ion-label>
+              <ion-input type="email" [clearInput]="true" formControlName="email" value="{{member_data.member_email}}"></ion-input>
+              
+            </ion-item>
       
-        <ion-card-content>
-          <ion-item fill="solid" class="m-3">
-            <ion-label position="floating">Name :</ion-label>
-            <ion-input type="email" ngModel Name value="{{member_data.member_name}}"></ion-input>
-            
-          </ion-item>
-          <ion-item fill="solid" class="m-3">
-            <ion-label position="floating">Email :</ion-label>
-            <ion-input type="email" ngModel Email value="{{member_data.member_email}}"></ion-input>
-            
-          </ion-item>
-    
-          <ion-item fill="solid" class="m-3">
-            <ion-label position="floating">Mobile :</ion-label>
-            <ion-input type="email" ngModel Mobile value="{{member_data.member_mobile}}"></ion-input>
-            
-          </ion-item>
-          <ion-item fill="solid" class="m-3">
-            <ion-label position="floating">New Password :</ion-label>
-            <ion-input type="email" ngModel email></ion-input>
-            
-          </ion-item>
-          <ion-button expand="full">Submit</ion-button>
-        </ion-card-content>
-      </ion-card>
-      <div class="ion-padding">
-        <ion-button color="dark" expand="block" routerLink="/recentorder">RECENT ORDER<ion-icon name="arrow-redo-outline"></ion-icon></ion-button>
-      </div>
+            <ion-item fill="solid" class="m-3">
+              <ion-label position="floating">Mobile :</ion-label>
+              <ion-input type="email" [clearInput]="true" formControlName="mobile" value="{{member_data.member_mobile}}"></ion-input>
+              
+            </ion-item>
+            <ion-item fill="solid" class="m-3">
+              <ion-label position="floating">New Password :</ion-label>
+              <ion-input type="email" [clearInput]="true" formControlName="password"></ion-input>
+              
+            </ion-item>
+            <ion-button expand="full" (click)="Editmember()">Submit</ion-button>
+          </ion-card-content>
+        </ion-card>
+        <div class="ion-padding">
+          <ion-button color="dark" expand="block" routerLink="/recentorder">RECENT ORDER<ion-icon name="arrow-redo-outline"></ion-icon></ion-button>
+        </div>
       
-      
+      </form>
     </div>
   </div>
   

@@ -11,9 +11,10 @@ import { AuthService } from '../service/auth.service';
 export class Tab3Page {
 
   LoginForm;
+  EditmemberForm;
   mode:string ="login";
   member_data :any=[];
-  
+  token :string="";
 
   constructor(private fb:FormBuilder,
     private auth : AuthService,
@@ -30,6 +31,23 @@ export class Tab3Page {
        
         password: ['', Validators.required]
       });
+
+      this.token = this.auth.getToken();
+
+      this.EditmemberForm = this.fb.group({
+        token: [this.auth.getToken(), Validators.required],
+        
+        name: ['', Validators.required],
+
+        email: ["", Validators.compose([
+          Validators.email, Validators.required
+        ])],
+        mobile: ['', Validators.required],
+       
+        password: ['', Validators.required]
+      });
+
+      console.log(this.auth.getToken());
       
       if(this.mode == 'dashboard'){
 
@@ -47,7 +65,7 @@ export class Tab3Page {
               this.member_data = data.result.memberExist;
              
     
-              console.log(this.member_data);
+              
             }
           }
         );
@@ -59,13 +77,6 @@ export class Tab3Page {
 
   loginsuccess(){
     this.mode ="dashboard";
-
-    if(localStorage['token'] != null) {
-      this.auth.setToken(localStorage['token']);
-    }
-
-    this.auth.checkValid();
-  
   
   
     this.auth.getmemberdetail().subscribe(
@@ -74,7 +85,7 @@ export class Tab3Page {
           this.member_data = data.result.member;
           
 
-          console.log(this.member_data);
+          
         }
       }
     );
@@ -104,7 +115,7 @@ export class Tab3Page {
 
           //Remember Me
           localStorage.setItem("token", data.result.token);
-          this.presentAlert("SUCCESS", "Register successfully", "Your account has been created. Please Login here");
+          this.presentAlert("SUCCESS", "Login successfully", "Your are at the dashboard .");
           this.loginsuccess();
         } else {
           this.presentAlert("ERROR", "", data.result);
@@ -112,13 +123,25 @@ export class Tab3Page {
       }
     );
 
-    console.log(this.LoginForm.value);
+    
 
 
   }
 
-  getmember_data(){
+  Editmember(){
+    this.auth.EditMember(this.EditmemberForm.value).subscribe(
+      (data:any)=>{
+        if(data.status == "OK") {
 
+
+          
+          this.presentAlert("SUCCESS", "Edit information successfully", "Your information has been updated . ");
+         
+        } else {
+          this.presentAlert("ERROR", "", data.result);
+        }
+      }
+    );
   }
 
 }

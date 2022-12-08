@@ -42,6 +42,10 @@ export class AuthService {
     return this.http.post("http://group2_project.local/api/login", data);
   }
 
+  EditMember(data:any) {
+    return this.http.post("http://group2_project.local/api/EditMember", data);
+  }
+
   
 
 
