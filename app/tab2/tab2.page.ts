@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { FormBuilder, } from '@angular/forms';
+import { CartServiceService } from '../service/cart-service.service';
+
+
 
 
 @Component({
@@ -12,8 +16,10 @@ export class Tab2Page {
     
   ) {
 
+  ngOnInit(){
+    
+    
   }
 
-  
 
 }
