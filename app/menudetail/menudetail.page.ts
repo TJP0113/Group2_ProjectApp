@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { IndexService } from '../service/index.service';
 
 @Component({
@@ -8,31 +9,26 @@ import { IndexService } from '../service/index.service';
 })
 export class MenudetailPage implements OnInit {
 
-
+  menu_detail:any=[];
 
   constructor(
-    private index: IndexService
+    private index: IndexService,
+    private route: ActivatedRoute,
   ) { }
 
   ngOnInit() {
-    // this.token = this.index.getToken();
+    this.index.getMenuDetail(this.route.snapshot.params['id']).subscribe(
+      (data:any)=>{
 
-    // console.log(this.route.snapshot.params['menu_id']);
+        console.log(data);
+        if(data.status == "OK") {
 
-    // this.token = this.auth.getToken();
-
-    // this.nt.getNote(this.route.snapshot.params['menu_id'], this.token).subscribe(
-    //   (data: any) => {
-
-    //     console.log(data);
-    //     if (data.status == "OK") {
-
-    //       this.noteData = data.result.noteData;
-
-
-    //     }
-    //   }
-    // );
+          this.menu_detail = data.result.menu_detail;
+          
+          
+        } 
+      }
+    );
 
   }
 }
