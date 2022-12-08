@@ -39,9 +39,9 @@
 
 
 	<ion-list>
-		<ion-item *ngFor="let m of menu">
+		<ion-item *ngFor="let m of menu" routerLink="/menudetail/{{m.menu_id}}">
 			<ion-thumbnail slot="start">
-				<img src="http://localhost/Group2_Project/{{m.image}}" alt="" routerLink="/menudetail/{{m.menu_id}}">
+				<img src="http://localhost/Group2_Project/{{m.image}}" alt="">
 			</ion-thumbnail>
 			<ion-label>
 				<b>{{m.title}}</b>
@@ -51,8 +51,6 @@
 				{{m.description}}<br />
 				${{m.price}}
 			</ion-label>
-			<ion-input class="ion-text-center" type="number" min="1"></ion-input>
-			<ion-button color="warning">Add</ion-button>
 		</ion-item>
 	</ion-list>
 

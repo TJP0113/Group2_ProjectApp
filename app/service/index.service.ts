@@ -18,5 +18,9 @@ export class IndexService {
   getMenuDetail(menu_id:string){
     return this.http.get("http://group2_project.local/api/GetMenuDetail/"+menu_id);
   }
+
+  addCart(data:any) {
+    return this.http.post("http://group2_project.local/api/AddCart", data);
+  }
 }
 
