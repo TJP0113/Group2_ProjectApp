@@ -21,7 +21,7 @@ export class Tab1Page {
 				if (data.status == "OK") {
 					this.chef = data.result.Cheflist;
 					this.menu = data.result.Menulist;
-				}
+				} 
 			}
 		);
 	}

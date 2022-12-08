@@ -18,24 +18,27 @@ export class Tab2Page {
 
 
   constructor(
-    
+    private cs :CartServiceService
   ) {
+
+    
+
+    
+    
+  }
 
   ngOnInit(){
     this.cs.getCart().subscribe(
       (data:any) => {
         if(data.status == "OK") {
           this.cart = data.result.cart;
-          console.log(this.cart);
+          this.total_number = data.result.totalAmount;
         
-
+          this.cs.setFinalAmount(data.result.totalAmount);
           
         }
       }
     );
-
-    this
-    
   }
 
 

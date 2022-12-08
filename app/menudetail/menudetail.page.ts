@@ -77,7 +77,8 @@ export class MenudetailPage implements OnInit {
   }
 
   addCart(){
-    this.addcartfrm.Qty = this.Qty;
+    this.addcartfrm.value.qty = this.Qty;
+
     this.index.addCart(this.addcartfrm.value).subscribe(
       (data:any)=>{
         if(data.status == "OK") {
@@ -85,6 +86,7 @@ export class MenudetailPage implements OnInit {
 
           
           this.presentAlert("SUCCESS", "AddCart Succesly", "");
+          this.router.navigate(["/tabs/tab1"]);
          
         } else {
           this.presentAlert("ERROR", "", data.result);
