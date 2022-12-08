@@ -19,9 +19,9 @@ const routes: Routes = [
   },
   {
     path: 'cartdetail',
-    loadChildren: () => import('./tab2/cartdetail/cartdetail.module').then( m => m.CartdetailPageModule)
-  }
-
+    loadChildren: () => import('./tab2/cartdetail/cartdetail.module').then(m => m.CartdetailPageModule)
+  },
+  {
     path: 'register',
     loadChildren: () => import('./tab3/register/register.module').then(m => m.RegisterPageModule)
   },

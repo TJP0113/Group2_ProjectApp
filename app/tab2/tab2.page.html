@@ -10,11 +10,28 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  
+  <ion-list>
+    <ion-item *ngFor = "let c of cart">
+      
+        
+      <ion-label>
+       <b>Item name:</b> {{c.menu_title}} 
+  
+        <b>Price:{{c.menu_price}} </b>
+      </ion-label>
+       
+     
+     
+    </ion-item>
+  </ion-list>
+    <ion-item>
+    Cart item:<br>
+  
+     Total Price:
+    </ion-item>
+  
+  
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+ 
 </ion-content>
