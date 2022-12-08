@@ -14,10 +14,16 @@
     <h2 class="article">{{menu_detail?.description}}</h2>
     <h2>${{menu_detail?.price}}</h2>
   </div>
-  <ion-button>-</ion-button>
-  1
-  <ion-button>+</ion-button>
+  <ion-col>
+    <ion-button type="button" (click)="minusQty()">-</ion-button>
+  </ion-col>
+  <ion-col>
+    <ion-button>{{Qty}}</ion-button>
+  </ion-col>
+  <ion-col>
+    <ion-button type="button" (click)="addQty()">+</ion-button>
+  </ion-col>
 
-  <ion-button color="warning">Add</ion-button>
+  <ion-button color="warning" (click)="addCart()">Add</ion-button>
 
 </ion-content>
