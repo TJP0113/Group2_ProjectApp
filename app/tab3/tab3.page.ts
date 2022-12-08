@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 import { AuthService } from '../service/auth.service';
 
@@ -13,12 +14,13 @@ export class Tab3Page {
   LoginForm;
   EditmemberForm;
   mode:string ="login";
-  member_data :any=[];
+  member_data :any={};
   token :string="";
 
   constructor(private fb:FormBuilder,
     private auth : AuthService,
     private alertController: AlertController,
+    private router: Router,
     ) {}
 
   ngOnInit(){
@@ -32,8 +34,7 @@ export class Tab3Page {
         password: ['', Validators.required]
       });
 
-      this.token = this.auth.getToken();
-
+    
       this.EditmemberForm = this.fb.group({
         token: [this.auth.getToken(), Validators.required],
         
@@ -47,23 +48,23 @@ export class Tab3Page {
         password: ['', Validators.required]
       });
 
-      console.log(this.auth.getToken());
+      this.token = this.auth.getToken();
+      if(this.token.length > 5){
+        this.mode = 'dashboard';
+      }
       
       if(this.mode == 'dashboard'){
-
-        if(localStorage['token'] != null) {
-          this.auth.setToken(localStorage['token']);
-        }
-    
         this.auth.checkValid();
-      
-      
-      
         this.auth.getmemberdetail().subscribe(
           (data:any) => {
             if(data.status == "OK") {
-              this.member_data = data.result.memberExist;
-             
+              this.member_data = data.result.member;
+              this.EditmemberForm.patchValue({
+                name: this.member_data.member_name,
+                email: this.member_data.member_email,
+                mobile: this.member_data.member_mobile,
+                
+              });
     
               
             }
@@ -142,6 +143,11 @@ export class Tab3Page {
         }
       }
     );
+  }
+
+  logout(){
+    localStorage.clear();
+    this.mode = "login";
   }
 
 }

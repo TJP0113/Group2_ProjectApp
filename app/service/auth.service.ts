@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
 
-  myToken:string = "";
+  myToken:string = localStorage.token?localStorage.token:"";
 
   constructor(
     private http: HttpClient,

@@ -3,6 +3,7 @@
     <ion-title>
       Home
     </ion-title>
+    <ion-button slot="end" (click)="logout()"><ion-icon name="log-out-outline"></ion-icon></ion-button>
   </ion-toolbar>
 </ion-header>
 
@@ -67,7 +68,7 @@
             
             <ion-item fill="solid" class="m-3">
               <ion-label position="floating">Name :</ion-label>
-              <ion-input type="email" [clearInput]="true" formControlName="name" value="{{member_data.member_name}}"></ion-input>
+              <ion-input type="text" [clearInput]="true" formControlName="name" value="{{member_data.member_name}}"></ion-input>
               
             </ion-item>
             <ion-item fill="solid" class="m-3">
@@ -78,12 +79,12 @@
       
             <ion-item fill="solid" class="m-3">
               <ion-label position="floating">Mobile :</ion-label>
-              <ion-input type="email" [clearInput]="true" formControlName="mobile" value="{{member_data.member_mobile}}"></ion-input>
+              <ion-input type="number" [clearInput]="true" formControlName="mobile" value="{{member_data.member_mobile}}"></ion-input>
               
             </ion-item>
             <ion-item fill="solid" class="m-3">
               <ion-label position="floating">New Password :</ion-label>
-              <ion-input type="email" [clearInput]="true" formControlName="password"></ion-input>
+              <ion-input type="password" [clearInput]="true" formControlName="password"></ion-input>
               
             </ion-item>
             <ion-button expand="full" (click)="Editmember()">Submit</ion-button>
