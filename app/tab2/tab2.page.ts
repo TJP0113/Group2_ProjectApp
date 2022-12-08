@@ -4,6 +4,7 @@ import { CartServiceService } from '../service/cart-service.service';
 
 
 
+
 @Component({
   selector: 'app-tab2',
   templateUrl: 'tab2.page.html',
@@ -11,12 +12,9 @@ import { CartServiceService } from '../service/cart-service.service';
 })
 export class Tab2Page {
 
-  member:any =[];
-  cart: any =[];
-
   constructor(
-    private cs: CartServiceService
-  ) {}
+    
+  ) {
 
   ngOnInit(){
     
