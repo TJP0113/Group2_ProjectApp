@@ -5,6 +5,14 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
+  },
+  {
+    path: 'register',
+    loadChildren: () => import('./tab3/register/register.module').then(m => m.RegisterPageModule)
+  },
+  {
+    path: 'recentorder',
+    loadChildren: () => import('./tab3/recentorder/recentorder.module').then(m => m.RecentorderPageModule)
   }
   ,
   {
