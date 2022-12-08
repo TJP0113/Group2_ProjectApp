@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Checkout Info</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div  class="checkoutDetail">
+    <form [formGroup]="checkoutDetail"> 
+      <ion-item style="text-align:center">
+        <ion-label>Purchase Detail</ion-label>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label>Name:</ion-label>
+        <ion-input name="name" type="name" [clearInput]="true" formControlName="name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Email:</ion-label>
+        <ion-input name="email" type="email" [clearInput]="true" formControlName="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Mobile:</ion-label>
+        <ion-input name="mobile" type="mobile" [clearInput]="true" formControlName="mobile"> </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Person number:</ion-label>
+        <ion-input name="person_number" type="text" [clearInput]="true" formControlName="person_number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Date:</ion-label>
+        <ion-input name="date" type="date" [clearInput]="true" formControlName="date"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Remark:</ion-label>
+        <ion-input name="remark" type="text" [clearInput]="true" formControlName="remark"></ion-input>
+      </ion-item>
+
+    </form>
+
+    <ion-button [disabled]="!checkoutDetail.valid" routerLink="/thank">Submit</ion-button>
+  </div>
+</ion-content>

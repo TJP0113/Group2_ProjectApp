@@ -5,7 +5,22 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
+  },
+  {
+    path: 'thank',
+    loadChildren: () => import('./tab2/thank/thank.module').then(m => m.ThankPageModule)
+  },
+
+
+  {
+    path: 'checkoutinfo',
+    loadChildren: () => import('./tab2/checkoutinfo/checkoutinfo.module').then(m => m.CheckoutinfoPageModule)
+  },
+  {
+    path: 'cartdetail',
+    loadChildren: () => import('./tab2/cartdetail/cartdetail.module').then( m => m.CartdetailPageModule)
   }
+
 ];
 @NgModule({
   imports: [
@@ -13,4 +28,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
