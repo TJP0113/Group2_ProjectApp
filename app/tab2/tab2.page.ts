@@ -12,12 +12,29 @@ import { CartServiceService } from '../service/cart-service.service';
 })
 export class Tab2Page {
 
+  member:any =[];
+  cart: any =[];
+  total_number: number=0;
+
+
   constructor(
     
   ) {
 
   ngOnInit(){
-    
+    this.cs.getCart().subscribe(
+      (data:any) => {
+        if(data.status == "OK") {
+          this.cart = data.result.cart;
+          console.log(this.cart);
+        
+
+          
+        }
+      }
+    );
+
+    this
     
   }
 
