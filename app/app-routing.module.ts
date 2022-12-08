@@ -7,6 +7,7 @@ const routes: Routes = [
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
   },
   {
+
     path: 'thank',
     loadChildren: () => import('./tab2/thank/thank.module').then(m => m.ThankPageModule)
   },
@@ -19,6 +20,19 @@ const routes: Routes = [
   {
     path: 'cartdetail',
     loadChildren: () => import('./tab2/cartdetail/cartdetail.module').then( m => m.CartdetailPageModule)
+  }
+
+    path: 'register',
+    loadChildren: () => import('./tab3/register/register.module').then(m => m.RegisterPageModule)
+  },
+  {
+    path: 'recentorder',
+    loadChildren: () => import('./tab3/recentorder/recentorder.module').then(m => m.RecentorderPageModule)
+  }
+  ,
+  {
+    path: 'menudetail/:id',
+    loadChildren: () => import('./menudetail/menudetail.module').then(m => m.MenudetailPageModule)
   }
 
 ];

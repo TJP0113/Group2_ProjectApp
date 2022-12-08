@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Menu Detail</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <ion-img src="http://localhost/Group2_Project/{{menu_detail?.image}}"></ion-img>
+  <div class="ion-padding">
+    <h1>{{menu_detail?.title}}</h1>
+    <h2 class="article">{{menu_detail?.description}}</h2>
+    <h2>${{menu_detail?.price}}</h2>
+  </div>
+  <ion-button>-</ion-button>
+  1
+  <ion-button>+</ion-button>
+
+  <ion-button color="warning">Add</ion-button>
+
+</ion-content>

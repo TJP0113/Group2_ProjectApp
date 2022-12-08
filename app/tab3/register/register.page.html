@@ -1,0 +1,80 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Register</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="registerFrm">
+  <ion-grid>
+    <ion-slides pager="true" class="homepageslider">
+      <ion-slide  >
+        <ion-card class="ion-no-margin" style="border-radius: 0; box-shadow:none;">
+          <h1>Step 1/3</h1>
+          <div class="slidercontent">
+             <div class="sliderIconBg">
+              <ion-icon name="arrow-forward-outline" class="sliderIcon"></ion-icon>
+             </div>
+          </div>
+          <ion-item fill="solid">
+            <ion-item fill="solid">
+              <ion-label position="stacked">
+                Name
+              </ion-label>
+              <ion-input [clearInput]="true" formControlName="name" type="text" placeholder="Input your Name"></ion-input>
+            </ion-item>
+          </ion-item>
+          
+        </ion-card>
+        
+      </ion-slide>
+      <ion-slide  >
+        <ion-card class="ion-no-margin" style="border-radius: 0; box-shadow:none;">
+          <h1>Step 2/3</h1>
+          <div class="slidercontent">
+             <div class="sliderIconBg">
+              <ion-icon name="arrow-forward-outline" class="sliderIcon"></ion-icon>
+             </div>
+          </div>
+          <ion-item fill="solid">
+            <ion-label position="stacked">
+              Email
+            </ion-label>
+            <ion-input [clearInput]="true" formControlName="email" type="email" placeholder="Input your Email"></ion-input>
+          </ion-item>
+          <ion-item fill="solid">
+            <ion-label position="stacked">
+              Mobile
+            </ion-label>
+            <ion-input [clearInput]="true" formControlName="mobile" type="number" placeholder="Input your Mobile"></ion-input>
+          </ion-item>
+          
+          
+        </ion-card>
+        
+      </ion-slide>
+      <ion-slide  >
+        <ion-card class="ion-no-margin" style="border-radius: 0; box-shadow:none;">
+          <h1>Step 3/3</h1>
+          <div class="slidercontent">
+             <div class="sliderIconBg">
+              <ion-icon name="log-in-outline" class="sliderIcon"></ion-icon>
+             </div>
+          </div>
+          <ion-item fill="solid">
+            <ion-label position="stacked">
+              Password
+            </ion-label>
+            <ion-input [clearInput]="true" formControlName="password" type="password" placeholder="Input your password"></ion-input>
+          </ion-item>
+          <ion-button  expand="full" [disabled]="registerFrm.Valid" (click)="submitRegister()">RESGISTER YOU ACC</ion-button>
+        </ion-card>
+        
+      </ion-slide>
+    </ion-slides>
+  </ion-grid>
+  </form>
+</ion-content>
