@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { FormBuilder, } from '@angular/forms';
+import { CartServiceService } from '../service/cart-service.service';
+
+
 
 @Component({
   selector: 'app-tab2',
@@ -7,10 +11,17 @@ import { Component } from '@angular/core';
 })
 export class Tab2Page {
 
-  constructor() {
+  member:any =[];
+  cart: any =[];
 
+  constructor(
+    private cs: CartServiceService
+  ) {}
+
+  ngOnInit(){
+    
+    
   }
 
-  
 
 }
