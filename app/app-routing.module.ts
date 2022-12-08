@@ -14,6 +14,12 @@ const routes: Routes = [
     path: 'recentorder',
     loadChildren: () => import('./tab3/recentorder/recentorder.module').then(m => m.RecentorderPageModule)
   }
+  ,
+  {
+    path: 'menudetail/:id',
+    loadChildren: () => import('./menudetail/menudetail.module').then(m => m.MenudetailPageModule)
+  }
+
 ];
 @NgModule({
   imports: [
@@ -21,4 +27,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
