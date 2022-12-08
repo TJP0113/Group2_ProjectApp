@@ -6,6 +6,14 @@ const routes: Routes = [
   {
     path: '',
     component: Tab3Page,
+  },
+  {
+    path: 'register',
+    loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
+  },
+  {
+    path: 'recentorder',
+    loadChildren: () => import('./recentorder/recentorder.module').then( m => m.RecentorderPageModule)
   }
 ];
 
