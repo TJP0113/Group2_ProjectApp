@@ -148,6 +148,7 @@ export class Tab3Page {
   logout(){
     localStorage.clear();
     this.mode = "login";
+    this.auth.setToken("");
   }
 
 }

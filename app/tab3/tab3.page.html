@@ -3,7 +3,7 @@
     <ion-title>
       Home
     </ion-title>
-    <ion-button *ngIf="token !== ''" slot="end" (click)="logout()"><ion-icon name="log-out-outline"></ion-icon></ion-button>
+    
   </ion-toolbar>
 </ion-header>
 
@@ -43,15 +43,20 @@
     </div>
   </div>
   <div *ngIf="mode == 'dashboard'">
+    <ion-button  (click)="logout()"><ion-icon name="log-out-outline"></ion-icon></ion-button>
     <ion-card>
+      
       <ion-card-header>
+        
         <ion-card-title>DashBoard</ion-card-title>
         <ion-card-subtitle>Hi , {{member_data.member_name}}</ion-card-subtitle>
+        
       </ion-card-header>
     
       <ion-card-content>
         Manage your personal detail and See your recent order here.
       </ion-card-content>
+      
     </ion-card>
 
     
