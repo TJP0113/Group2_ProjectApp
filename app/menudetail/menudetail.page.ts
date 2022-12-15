@@ -66,7 +66,7 @@ export class MenudetailPage implements OnInit {
 
   minusQty() {
     if (this.Qty==1){
-      this.presentAlert("ERROR", "Must at least 1 iteam", "Your information has been updated . ");
+      this.presentAlert("ERROR", "Must at least 1 iteam", "");
     }else{
       this.Qty--;
     }
