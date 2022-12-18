@@ -28,6 +28,11 @@ export class Tab2Page {
   }
 
   ngOnInit(){
+    
+  }
+
+
+  ionViewDidEnter(){
     this.cs.getCart().subscribe(
       (data:any) => {
         if(data.status == "OK") {

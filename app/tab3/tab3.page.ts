@@ -149,6 +149,8 @@ export class Tab3Page {
     localStorage.clear();
     this.mode = "login";
     this.auth.setToken("");
+    location.reload();
+    //this.cs.refreshtoken();
   }
 
 }

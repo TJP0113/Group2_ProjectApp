@@ -16,10 +16,18 @@ export class CartServiceService {
 
  
   getCart(){
-    return this.http.get("http://group2_project.local/api/GetCart/"+this.myToken);
+    this.refreshtoken();
+    if(this.myToken == ""){
+      return this.http.get("http://group2_project.local/api/GetCart/0");
+
+    }else{
+      return this.http.get("http://group2_project.local/api/GetCart/"+this.myToken);
+    }
+   
   }
 
   Checkout(data:any){
+
     return this.http.post("http://group2_project.local/api/Checkout",data);
   }
 
@@ -30,6 +38,9 @@ export class CartServiceService {
 
   getAmount(){
     return this.finalAmount;
+  }
+  refreshtoken(){
+    this.myToken = localStorage.token?localStorage.token:"";
   }
 
 }
