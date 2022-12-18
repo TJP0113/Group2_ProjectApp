@@ -28,10 +28,15 @@ export class Tab2Page {
   }
 
   ngOnInit(){
+<<<<<<< Updated upstream
     
   }
 
 
+=======
+  }
+
+>>>>>>> Stashed changes
   ionViewDidEnter(){
     this.cs.getCart().subscribe(
       (data:any) => {
